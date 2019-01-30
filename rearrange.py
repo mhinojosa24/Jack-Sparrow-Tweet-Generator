@@ -11,21 +11,23 @@ def reorganize_quote(sentence):
     '''
     for word in array:
         rand_int = random.randint(0, len(array))
-        print(rand_int)
+
         if "." in word:
             word = word[:-1] # removes the last character of index
-            reversed_word = word[::-1] # reverse word
-            new_array.insert(rand_int, reversed_word)
+            # reversed_word = word[::-1] # reverse word
+            new_array.insert(rand_int, word)
         else:
-            reversed_word = word[::-1]
-            new_array.insert(rand_int, reversed_word)
+            # reversed_word = word[::-1]
+            new_array.insert(rand_int, word)
 
-    new_array = ' '.join(new_array) + "."
-    new_array = new_array[:1].upper() + new_array[1:]
+    sentence = ' '.join(new_array) + "."
 
-    return new_array
 
-# reorganize_quote("max")
+
+    new_sentence = sentence[:1].upper() + sentence[1:]
+
+    return new_sentence
+
 def main():
     user_input = input("Please enter a sentece to rearrange: ")
     print(reorganize_quote(user_input))
