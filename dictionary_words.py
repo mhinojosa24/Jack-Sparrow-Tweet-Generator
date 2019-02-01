@@ -14,19 +14,14 @@ import sys
 
 
 def set_of_words(number_of_words):
-    file_name = "/usr/share/dict/words"
-
     random_words = []
     word_count = 0
-
-    # file = open(file_name, "w")
-    # file.write(words_to_string)
-    # file.close()
-
 
     with open( "/usr/share/dict/words", "r") as f:
         data = f.read()
         words_list = data.split() #puts words object into an array of strings
+        # [ .split() ] uses more memory rather than .readlines()
+
 
 
     while word_count != number_of_words:
@@ -40,7 +35,6 @@ def set_of_words(number_of_words):
 
 
 def make_sentence(list_of_words):
-
     sentence = ' '.join(list_of_words) + "."
     capitalized_sentence = sentence[:1].upper() + sentence[1:]
 
