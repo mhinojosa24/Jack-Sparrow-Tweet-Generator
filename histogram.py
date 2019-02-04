@@ -23,20 +23,30 @@ text = "one fish two fish red fish blue fish"
 file = "text_file.txt"
 
 def histogram(source_text):
+    '''
     # return stored data structured of each unique words
     dictionary = dict()
     with open('{}'.format(source_text), 'r') as f:
         text_file = f.read()
         text = text_file.split()
 
-    for word in text:
-        if word != " ":
-            if word not in dictionary:
-                dictionary[word] = 1
-            else:
-                dictionary[word] = dictionary[word] + 1
+    '''
+    text = source_text.split(' ')
+    list_of_list = []
+    sum_list = []
 
-    return dictionary
+    for word in text:
+        found = False
+        for w in sum_list:
+            if w[0] == word:
+                found = True
+                w[1] = w[1] + 1
+                break
+        if not found:
+            sum_list.append([word, 1])
+
+
+    print(sum_list)
 
 
 
@@ -47,7 +57,6 @@ def unique_words(histogram):
 
     for value in values:
         sum += value
-
 
     print(sum)
 
@@ -62,10 +71,10 @@ def frequency(word, histogram):
 
 
 def main():
-    histo = histogram(file)
+    histo = histogram(text)
     # unique_words(histo)
-    word = sys.argv[1]
-    frequency(word, histo)
+    # word = sys.argv[1]
+    # frequency(word, histo)
 
 
 if __name__ == "__main__":
