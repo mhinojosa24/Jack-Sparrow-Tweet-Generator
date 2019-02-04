@@ -32,17 +32,17 @@ def histogram(source_text):
 
     '''
     text = source_text.split(' ')
-    list_of_list = []
+     = []
     sum_list = []
 
     for word in text:
-        found = False
+        is_found = False
         for w in sum_list:
             if w[0] == word:
-                found = True
+                is_found = True
                 w[1] = w[1] + 1
                 break
-        if not found:
+        if not is_found:
             sum_list.append([word, 1])
 
 
