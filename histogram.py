@@ -21,10 +21,10 @@ import sys
 
 text = "one fish two fish red fish blue fish"
 file = "text_file.txt"
-
+# dictionary is most fast, wasteful in terms of space
 def histogram(source_text):
-    # return stored data structured of each unique words
     dictionary = dict()
+
     with open('{}'.format(source_text), 'r') as f:
         text_file = f.read()
         text = text_file.split(' ')
@@ -38,13 +38,11 @@ def histogram(source_text):
 
 
 def unique_words(histogram):
-
     values = histogram.values()
     sum = 0
 
     for value in values:
         sum += value
-
     print(sum)
 
 
@@ -56,10 +54,9 @@ def frequency(word, histogram):
     else:
         print("Not Found")
 
-
+# less wasteful rather than a dictionary
 def list_of_list(source_text):
     text = source_text.split(' ')
-    list_of_list = []
     sum_list = []
 
     for word in text:
@@ -75,7 +72,7 @@ def list_of_list(source_text):
 
     print(sum_list)
 
-
+# list of tuples is less wasteful in space rather than list of list
 def list_of_tuples(source_text):
     text = source_text.split(' ')
     list = []
@@ -87,14 +84,19 @@ def list_of_tuples(source_text):
                 found = True
                 count = w[1] + 1
                 list.remove(w)
+                # creates a tuple and appends into a list
                 list.append((word, count))
                 break
 
         if not found:
             list.append((word, 1))
-    # tuple = list(zip(unique_words, frequency))
 
     print(list)
+
+
+# most effient of memory in terms of all
+def list_of_counts(source_text):
+    text = source_text.split(' ')
 
 
 
@@ -103,8 +105,9 @@ def main():
     # unique_words(histo)
     # word = sys.argv[1]
     # frequency(word, histo)
-    # list_of_list(text)
-    list_of_tuples(text)
+    list_of_list(text)
+    # list_of_tuples(text)
+    # list_of_counsts(text)
 
 if __name__ == "__main__":
     main()
