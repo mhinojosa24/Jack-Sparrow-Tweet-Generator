@@ -64,13 +64,15 @@ def list_of_list(source_text):
         for w in sum_list:
             if w[0] == word:
                 found = True
-                w[1] = w[1] + 1
+                w[1] += 1
                 break
         if not found:
             sum_list.append([word, 1])
 
-
-    print(sum_list)
+    # uncomment this line later, Phyllis commented for testing
+    # print(sum_list)
+    # handle uppercase
+    return sum_list
 
 # list of tuples is less wasteful in space rather than list of list
 def list_of_tuples(source_text):
@@ -101,10 +103,10 @@ def list_of_counts(source_text):
 
 
 def main():
-    # histo = histogram(file)
+    # histo = histogram(text)
     # unique_words(histo)
     # word = sys.argv[1]
-    # frequency(word, histo)
+    # frequency(word, list)
     list_of_list(text)
     # list_of_tuples(text)
     # list_of_counsts(text)
