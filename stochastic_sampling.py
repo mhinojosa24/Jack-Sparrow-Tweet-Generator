@@ -1,40 +1,52 @@
+
 import random, sys
 from histogram import *
-
 '''
 <-- Functions -->
 
-histogram()
-    - takes a 'source_text' argument and return a histogram data structure that stores each unique word.
+randomized_word()
+    - takes a 'source_text' argument.
+    - stores a text file in a listogram
+    - returns a word based on its frequency
 
+test_word()
+    - calculates the total amount of each word based on it's frequency
+    
 '''
 
 list = 'one fish two fish red fish blue fish'
 
-def probability(histogram):
-    # tokens = total count of words
-    tokens = 0 # find what this value is
-    listogram = list_of_list(histogram)
-    updated_array = []
-    counter = 10000
+def randomized_word(histogram):
+    total_count = 0 #find what this value is
+    chance = 0.0 #'chance' is the probability of getting a particular word
+    listogram = list_of_list(histogram) #list of list of unique words and its frequency
+    random_num = random.random() #random number from 0 & 1
 
-    while counter > 0:
-        counter -= 1
-        for word_list in listogram:
-            tokens += word_list[1]
+'''loops through listogram & add the total count of each word'''
+    for word_list in listogram:
+        total_count += word_list[1]
 
-    for small_list in listogram:
-        updated_array.append([small_list[0], small_list[1] / tokens])
-    print(updated_array)
-
+    for word_set in listogram:
+        chance += word_set[1] / total_count #divide the words frequency with total count
+        if chance >= random_num: #check the chance of getting a particular based on their probability
+            return word_set[0]
 
 
-    # result = '{}: {}'.format(word, tokens)
-    # print('Tokens: {}'.format(tokens))
-    # return(result)
+def test_word():
+    source = sys.argv[1]
+    test = {}
 
-    # make a new list that looks something like:
-     #[['one', 0.125], ['fish', 0.5], ['two', 0.125], ['red', 0.125], ['blue', 0.125]]
+    for i in range(10000):
+        random_word = randomized_word(source)
+        if random_word not in test:
+            test[random_word] = 1
+
+        else:
+            test[random_word] += 1
+
+    return test
 
 
-probability(list)
+
+if __name__ == "__main__":
+    print(test_word())
