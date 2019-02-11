@@ -11,7 +11,7 @@ randomized_word()
 
 test_word()
     - calculates the total amount of each word based on it's frequency
-    
+
 '''
 
 list = 'one fish two fish red fish blue fish'
@@ -29,6 +29,7 @@ def randomized_word(histogram):
     for word_set in listogram:
         chance += word_set[1] / total_count #divide the words frequency with total count
         if chance >= random_num: #check the chance of getting a particular based on their probability
+        
             return word_set[0]
 
 
@@ -38,12 +39,11 @@ def test_word():
 
     for i in range(10000):
         random_word = randomized_word(source)
+
         if random_word not in test:
             test[random_word] = 1
-
         else:
             test[random_word] += 1
-
     return test
 
 
