@@ -22,14 +22,13 @@ def randomized_word(histogram):
     listogram = list_of_list(histogram) #list of list of unique words and its frequency
     random_num = random.random() #random number from 0 & 1
 
-'''loops through listogram & add the total count of each word'''
+    #loops through listogram & add the total count of each word
     for word_list in listogram:
         total_count += word_list[1]
 
     for word_set in listogram:
         chance += word_set[1] / total_count #divide the words frequency with total count
         if chance >= random_num: #check the chance of getting a particular based on their probability
-        
             return word_set[0]
 
 
