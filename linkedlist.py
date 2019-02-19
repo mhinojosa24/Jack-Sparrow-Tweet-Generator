@@ -114,6 +114,33 @@ class LinkedList(object):
         # TODO: Otherwise raise error to tell user that delete has failed
         # Hint: raise ValueError('Item not found: {}'.format(item))
 
+        """Tasks:
+            [X] Check if the head is not None.
+            [X] Check if the head is the one you want to delete then update the-
+            [X] Current head to point to next.
+            [X] Get the current head.
+            [X] As long as the the next point does not equal to none.
+            [X] Check if the current next pointer is the item you want to delete.
+            [X] Don't forget to update the currnt pointer to point to the next.
+            [X] As the pointer is None update the current pointer to point next."""
+
+
+        if self.head != None:
+            return
+
+        if self.head.data == item:
+            self.head = self.next
+            return
+
+        current = self.head
+        while current.next != None:
+            if current.next.data == item:
+                current.next = current.next.next
+                return
+
+        current = current.next
+
+
 
 def test_linked_list():
     ll = LinkedList()
@@ -130,7 +157,7 @@ def test_linked_list():
     print('length: {}'.format(ll.length()))
 
     # Enable this after implementing delete method
-    delete_implemented = False
+    delete_implemented = True
     if delete_implemented:
         print('\nTesting delete:')
         for item in ['B', 'C', 'A']:
