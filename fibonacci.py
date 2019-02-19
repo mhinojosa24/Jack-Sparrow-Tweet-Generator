@@ -12,9 +12,8 @@ def fibo(num):
         print(num2)
 
 
-
 def main():
-    number = int(sys.argv[1])
+    number = int(sys.argv[1
     fibo(number)
 
 if __name__ == "__main__":
