@@ -57,13 +57,12 @@ class LinkedList(object):
         """Return the length of this linked list by traversing its nodes.
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Loop through all nodes and count one for each
-        count_node = 0
-        current = self.head
+        count_node = 0 # node count
+        current = self.head # the starting node
 
-        while current is not None:
-            count_node += 1
-            current = current.next
-
+        while current is not None: # as long as the current node does not equal to None
+            count_node += 1 # update the count of nodes
+            current = current.next # go to the next pointed node
 
         return count_node # return length of linked list
 
@@ -92,6 +91,12 @@ class LinkedList(object):
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Create new node to hold given item
         # TODO: Prepend node before head, if it exists
+
+        new_head = Node(item) # creates a new node
+        if self.head != None: # check if the head of the linked list is not None
+            newhead.next = self.head # new node next value will point to the old head
+            self.head = new_head # update the new head
+
 
     def find(self, quality):
         """Return an item from this linked list satisfying the given quality.
