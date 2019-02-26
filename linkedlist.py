@@ -52,7 +52,7 @@ class LinkedList(object):
 
     def is_empty(self):
         """Return a boolean indicating whether this linked list is empty."""
-        return self.head is None
+        return self.head is None #O(1)
 
     def length(self):
         """Return the length of this linked list by traversing its nodes.
@@ -90,7 +90,7 @@ class LinkedList(object):
 
     def prepend(self, item):
         """Insert the given item at the head of this linked list.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        TODO: Running time: O(1) because we only change the first node and never loop through all nodes"""
         # TODO: Create new node to hold given item
         # TODO: Prepend node before head, if it exists
 
