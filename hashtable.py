@@ -121,7 +121,7 @@ class HashTable(object):
         found_item = bucket.find(lambda key_value: key_value[0] == key)
 
         if found_item is not None:
-            found_item.delete(found_item)
+            bucket.delete(found_item)
 
         bucket.append((key, value))
 
