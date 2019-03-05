@@ -1,4 +1,5 @@
-#!/Users/maximohinojosa/ms/courses/CS/cs-1.2/tweet-gen/venv/bin/python2.7
+#!/Users/maximohinojosa/ms/courses/CS/cs-1.2/tweet-gen/venv/bin/python3
+
 # -*- coding: utf-8 -*-
 import re
 import sys

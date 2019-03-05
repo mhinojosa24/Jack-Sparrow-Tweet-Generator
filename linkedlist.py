@@ -60,7 +60,7 @@ class LinkedList(object):
         # TODO: Loop through all nodes and count one for each
 
 
-        return self.LL_length # return length of linked list
+        return self.LL_length # returns length of linked list
 
     def append(self, item):
         """Insert the given item at the tail of this linked list.
@@ -108,7 +108,7 @@ class LinkedList(object):
 
     def find(self, quality):
         """Return an item from this linked list satisfying the given quality.
-        TODO: Best case running time: O(???) Why and under what conditions?
+        TODO: Best case running time: O(n) Why and under what conditions?
         TODO: Worst case running time: O(???) Why and under what conditions?"""
         # TODO: Loop through all nodes to find item where quality(item) is True
         # TODO: Check if node's data satisfies given quality function
@@ -123,8 +123,8 @@ class LinkedList(object):
 
     def delete(self, item):
         """Delete the given item from this linked list, or raise ValueError.
-        TODO: Best case running time: O(???) Why and under what conditions?
-        TODO: Worst case running time: O(???) Why and under what conditions?"""
+        TODO: Best case running time: O() Why and under what conditions?
+        TODO: Worst case running time: O() Why and under what conditions?"""
         # TODO: Loop through all nodes to find one whose data matches given item
         # TODO: Update previous node to skip around node with matching data
         # TODO: Otherwise raise error to tell user that delete has failed
