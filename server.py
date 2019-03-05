@@ -10,7 +10,7 @@ def main():
     # return generate_sentence()
     return render_template('index.html')
 
-
+#tempo comment
 # def generate_sentence():
 #     file = 'sample_corpus.txt'
 #     random_words = randomized_word(file)
