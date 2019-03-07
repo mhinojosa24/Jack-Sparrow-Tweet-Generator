@@ -1,14 +1,15 @@
-# from flask import Flask, render_template
+from flask import Flask, render_template
 # # from stochastic_sampling import *
 #
 # import sys
-# app = Flask(__name__)
+app = Flask(__name__)
 #
 #
-# @app.route('/')
-# def main():
-#     # return generate_sentence()
-#     return render_template('index.html')
+@app.route('/')
+def main():
+    return 'hi'
+    # return generate_sentence()
+    # return render_template('index.html')
 
 #tempo comment
 def generate_sentence():
