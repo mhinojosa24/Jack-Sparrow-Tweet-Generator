@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def generator():
-    with open( 'sample_corpus.txt', "r") as f:
+    with open( 'text_file.txt', "r") as f:
         data = f.read()
         words_list = data.split()
     mc = markov_chain(words_list)
