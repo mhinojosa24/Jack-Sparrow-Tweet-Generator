@@ -1,10 +1,12 @@
 from flask import Flask
-from stochastic_sampling import *
-
+from markov_chain import *
 app = Flask(__name__)
 
 @app.route('/')
-def generate_sentence():
-    file = 'sample_corpus.txt'
-    random_words = randomized_word(file)
-    return random_words
+def generator():
+    with open( 'sample_corpus.txt', "r") as f:
+        data = f.read()
+        words_list = data.split()
+    mc = markov_chain(words_list)
+    sentence = generate_sentence(mc, 20)
+    return sentence

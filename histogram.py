@@ -58,7 +58,7 @@ def frequency(word, histogram):
 
 # less wasteful rather than a dictionary
 def list_of_list(file):
-    text = read_file(file)
+    # text = read_file(file)
     text = text.split(' ')
 
     sum_list = []

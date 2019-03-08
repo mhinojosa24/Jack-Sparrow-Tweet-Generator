@@ -48,7 +48,7 @@ def print_histogram(word_list):
     for word in word_list[-2:]:
         freq = histogram.frequency(word)
         print('{!r} occurs {} times'.format(word, freq))
-    print()
+    # print()
 
 
 def main():
