@@ -28,6 +28,7 @@ def markov_chain(list_of_values):
 def generate_sentence(dictogram, num_words):
     all_keys = []
     words_for_sent = []
+    new_sentence = ''
 
     for index, keys in enumerate(dictogram):
         all_keys.append(keys)
@@ -45,12 +46,13 @@ def generate_sentence(dictogram, num_words):
         value = dictogram[tuple_key]
         sampler_word = randomized_word(value)
         words_for_sent.append(sampler_word)
+        # print(words_for_sent)
 
-        new_sentence = ''
+
         for word in  words_for_sent:
-            new_sentence += word + ' '
+            new_sentence += word + " "
 
-            return new_sentence
+    return new_sentence
 
 
 
@@ -58,7 +60,7 @@ def main():
     sample = 'I like cats. I love dogs. I hate nasty food. Although I love love food.'
     sample = sample.split(" ")
     dict = markov_chain(sample)
-    print(dict)
+    # print(dict)
     gen = generate_sentence(dict, 10)
     print(gen)
 
