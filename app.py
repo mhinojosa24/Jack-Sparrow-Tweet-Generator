@@ -8,5 +8,5 @@ def generator():
         data = f.read()
         words_list = data.split()
     mc = markov_chain(words_list)
-    sentence = generate_sentence(mc, 20)
+    sentence = generate_sentence(mc, 10)
     return sentence
