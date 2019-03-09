@@ -21,9 +21,11 @@ def randomized_word(histogram):
     chance = 0.0 #'chance' is the probability of getting a particular word
     # listogram = list_of_list(histogram) #list of list of unique words and its frequency
     random_num = random.random() #random number from 0 & 1
-
+    hist = histogram.items()
+    # print(hist)
     #loops through listogram & add the total count of each word
     for key, value in histogram.items():
+        # print("value", value[1])
         total_count += value
 
 

@@ -22,6 +22,7 @@ def markov_chain(list_of_values):
             new_dict.add_count(next_word) # add count of next word
             mc[pair] = new_dict #
         i += 1
+    print(mc)
     return mc
 
 
@@ -50,6 +51,7 @@ def generate_sentence(dictogram, num_words):
 
 
         for word in  words_for_sent:
+
             new_sentence += word + " "
 
     return new_sentence
