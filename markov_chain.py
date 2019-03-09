@@ -22,7 +22,7 @@ def markov_chain(list_of_values):
             new_dict.add_count(next_word) # add count of next word
             mc[pair] = new_dict #
         i += 1
-    print(mc)
+    # print(mc)
     return mc
 
 
