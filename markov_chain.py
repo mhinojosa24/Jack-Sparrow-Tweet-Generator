@@ -43,7 +43,7 @@ def generate_sentence(dictogram, num_words):
         get_next_set = dictogram[random_set]
         # print("next set of tuple ===> ", get_next_set)
     print('words for sentence ==> ', words_for_sent, '\n<== end\n')
-        return words_for_sent
+    return words_for_sent
 
 
 
