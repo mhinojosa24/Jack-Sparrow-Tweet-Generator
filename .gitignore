@@ -141,7 +141,9 @@ pip-selfcheck.json
 # Created by https://www.gitignore.io/api/env,venv
 # Edit at https://www.gitignore.io/?templates=env,venv
 
-#!! ERROR: env is undefined. Use list command to see defined gitignore types !!#
+
+# Created by https://www.gitignore.io/api/venv
+# Edit at https://www.gitignore.io/?templates=venv
 
 ### venv ###
 # Virtualenv
@@ -157,5 +159,4 @@ pyvenv.cfg
 .venv
 pip-selfcheck.json
 
-# End of https://www.gitignore.io/api/env,venv
-.env
+# End of https://www.gitignore.io/api/venvs
