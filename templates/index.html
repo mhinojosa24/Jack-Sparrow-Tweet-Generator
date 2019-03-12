@@ -1,1 +1,60 @@
-<h1>hello bb</h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Jack Sparrow Tweet Generator</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename = '../css/style.css')}}">
+    </head>
+    <!-- css changes were not being met, styling is done here. -->
+    <style>
+        .masthead {
+            height: 100vh;
+            min-height: 500px;
+            background-image: url(https://wallpapercave.com/wp/wp1830335.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-top: 250px;
+        }
+
+        .container {
+            margin-right: 30%;
+        }
+
+        .card {
+            background-color: transparent;
+            color: #ffffff;
+        }
+
+        .card-body {
+            padding-right: 150px;
+            color: #ffffff;
+        }
+
+        .card-body, h2 {
+            align-text: left;
+        }
+    </style>
+    <body>
+        <div class="masthead">
+            <div class="container">
+                <div class="card border-0">
+                    <div class="card-body">
+                        <h2 style="font-family: 'Niconne', cursive;"> Captain Jack Sparrow would like to say something:</h2>
+                        <blockquote style="font-family: 'Niconne', cursive;"> {{ sentence }}</blockquote>
+                        <form action="/" method="get">
+                            <input type="hidden" name="sentence" value="{{ sentence }}">
+                            <button type="submit" onclick="reloadPage()" class="btn btn-outline-light">Speak!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function reloadPage() {
+            windo.location.reload();
+        }
+    </script>
+</html>

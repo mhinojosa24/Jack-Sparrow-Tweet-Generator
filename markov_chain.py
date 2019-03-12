@@ -38,14 +38,14 @@ def generate_sentence(dictogram, num_words):
 
         random_set = random.choice(all_keys) # <== gets random choice from all key pair of words
         # print('random tuple set ==> ', random_set, '\n<== end of random tuple set \n')
+        if random_set is not None:
+            words_for_sent.append(random_set[0])
+            words_for_sent.append(random_set[1])
+            words_for_sent.append(random_set[2])
+            words_for_sent.append(random_set[3])
+            words_for_sent.append(random_set[4])
 
-        words_for_sent.append(random_set[0])
-        words_for_sent.append(random_set[1])
-        words_for_sent.append(random_set[2])
-        words_for_sent.append(random_set[3])
-        words_for_sent.append(random_set[4])
-
-        get_next_set = dictogram[random_set]
+            get_next_set = dictogram[random_set]
         # print('next set of tuple ===> ', get_next_set)
     # print('words for sentence ==> ', words_for_sent, '\n<== end\n')
 
@@ -57,7 +57,7 @@ def generate_sentence(dictogram, num_words):
 
 def main():
     sample = 'I like cats. I love dogs. I hate mr.max nasty food. Although I love love food.'
-    with open( 'text_file.txt', "r") as f:
+    with open( 'corpus.txt', "r") as f:
         data = f.read()
         # words_list = data.split()
         content = re.sub('[^a-zA-Z0-9 \n\.]', '', data)
@@ -65,7 +65,7 @@ def main():
         dict = markov_chain(sample)
         # print(dict)
         gen = generate_sentence(dict, 4)
-        print(gen)
+        return gen
 
 
 if __name__ == '__main__':
