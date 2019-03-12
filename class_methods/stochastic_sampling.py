@@ -1,6 +1,6 @@
 
 import random, sys
-from histogram import *
+from class_methods.histogram import *
 '''
 <-- Functions -->
 
