@@ -8,6 +8,7 @@
     </head>
     <!-- css changes were not being met, styling is done here. -->
     <style>
+
         .masthead {
             height: 100vh;
             min-height: 500px;
@@ -22,9 +23,24 @@
             margin-right: 30%;
         }
 
+        .seeTweet {
+            position: absolute;
+            margin-top: 30%;
+            padding-left: 11%;
+            top: 0; right: 0; bottom: 0; left: 0;
+        }
+
         .card {
             background-color: transparent;
             color: #ffffff;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            margin: auto;
+            margin-left: 10%;
+            height: 200px;
+            width: 50%;
+            min-width: 500px;
+            white-space: normal !important;
         }
 
         .card-body {
@@ -36,6 +52,10 @@
             align-text: left;
         }
 
+        .title {
+            white-space: nowrap !important;
+        }
+
         #max {
             color: #ffffff;
         }
@@ -45,7 +65,7 @@
             <div class="container">
                 <div class="card border-0">
                     <div class="card-body">
-                        <h2 style="font-family: 'Niconne', cursive;"> Captain Jack Sparrow would like to say something:</h2>
+                        <h2 class="title" style="font-family: 'Niconne', cursive;"> Captain Jack Sparrow would like to say something:</h2>
                         <blockquote style="font-family: 'Niconne', cursive;"> {{ sentence }}</blockquote>
                         <form action="/" method="get">
                             <input type="hidden" name="sentence" value="{{ sentence }}">
@@ -53,16 +73,18 @@
                         </form>
                     </div>
                 </div>
+                <div class="seeTweet">
+                    <form action="/tweet" method="post">
+                        <input type="hidden" name="sentence" value="{{ sentence }}">
+                        <button type="submit">Tweet this</button>
+                    </form>
+                    <div>
+                        <a class="twitter-timeline" data-width="500" data-height="300" data-theme="dark" href="https://twitter.com/Captain05725774">Tweets by TwitterDev</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                </div>
             </div>
         </div>
-        <form action="/tweet" method="post">
-          <input type="hidden" name="sentence" value="{{ sentence }}">
-          <button type="submit">Tweet this</button>
-        </form>
-      <div>
-        <a class="twitter-timeline" data-width="650" data-height="500" data-theme="dark" href="https://twitter.com/Captain05725774">Tweets by TwitterDev</a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-       </div>
     </body>
     <script>
         function reloadPage() {

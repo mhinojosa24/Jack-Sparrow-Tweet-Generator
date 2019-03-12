@@ -1,6 +1,8 @@
 # from nltk.corpus import words
-from class_methods.stochastic_sampling import *
-from class_methods.dictogram import Dictogram
+# from class_methods.stochastic_sampling import *
+from stochastic_sampling import *
+# from class_methods.dictogram import Dictogram
+from dictogram import Dictogram
 import random, re
 
 
@@ -10,10 +12,10 @@ def markov_chain(list_of_values):
     mc = Dictogram()
 
     i = 0
-    while i < len(list_of_values) - 5:
-        pair = (list_of_values[i], list_of_values[i+1], list_of_values[i+2], list_of_values[i+3], list_of_values[i+5]) # pair of words in tuple
+    while i < len(list_of_values) - 3:
+        pair = (list_of_values[i], list_of_values[i+1], list_of_values[i+2]) # pair of words in tuple
         # print(list_of_values[i], list_of_values[i+1], list_of_values[i+2], list_of_values[i+3], list_of_values[i+5])
-        next_word = list_of_values[i+5] # next word
+        next_word = list_of_values[i+3] # next word
 
         if pair in mc: # check to see if pair of words exist in the dictionary
             mc[pair].add_count(next_word) # increments the count of the next word
@@ -42,8 +44,7 @@ def generate_sentence(dictogram, num_words):
             words_for_sent.append(random_set[0])
             words_for_sent.append(random_set[1])
             words_for_sent.append(random_set[2])
-            words_for_sent.append(random_set[3])
-            words_for_sent.append(random_set[4])
+            
 
             get_next_set = dictogram[random_set]
         # print('next set of tuple ===> ', get_next_set)
