@@ -1,5 +1,5 @@
 # from nltk.corpus import words
-from stochastic_sampling import *
+from stochastic_sampling import 
 from dictogram import Dictogram
 import random, re
 
