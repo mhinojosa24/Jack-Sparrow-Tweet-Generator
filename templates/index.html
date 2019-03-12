@@ -19,7 +19,7 @@
         }
 
         .container {
-            margin-right: 30%;
+            margin-right: 90%;
         }
 
         .card {
@@ -28,14 +28,18 @@
         }
 
         .card-body {
-            padding-right: 150px;
+            /* padding-right: 150px; */
             color: #ffffff;
+            padding-left: 40%;
         }
 
         .card-body, h2 {
-            align-text: left;
+            p;
         }
-        
+
+        #max {
+            color: #ffffff;
+        }
     </style>
     <body>
         <div class="masthead">
@@ -52,6 +56,14 @@
                 </div>
             </div>
         </div>
+        <form action="/tweet" method="post">
+          <input type="hidden" name="sentence" value="{{ sentence }}">
+          <button type="submit">Tweet this</button>
+        </form>
+      <div>
+        <a class="twitter-timeline" data-width="650" data-height="500" data-theme="dark" href="https://twitter.com/Captain05725774">Tweets by TwitterDev</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+       </div>
     </body>
     <script>
         function reloadPage() {
