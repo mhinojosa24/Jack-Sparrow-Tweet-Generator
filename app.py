@@ -12,7 +12,7 @@ app = Flask(__name__, template_folder='templates', static_folder='css')
 
 with open('text_file.txt', "r") as f:
     data = f.read()
-    data = data.decode("utf-8", "replace")
+    # data = data.decode("utf-8", "replace")
     words_list = data.split()
 
 
