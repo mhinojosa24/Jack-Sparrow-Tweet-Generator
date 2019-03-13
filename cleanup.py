@@ -4,7 +4,8 @@ def cleanup(source_text):
     '''This method cleans the text document'''
 
     with open(source_text, 'r') as f:
-        text_body = f.read().decode('utf-8', 'replace')
+        # text_body = f.read().decode('utf-8', 'replace')
+        text_body = f.read()
 
     removed_new_lines = text_body.replace('\n', '')
     removed_commas = removed_new_lines.replace(',', ' ')
