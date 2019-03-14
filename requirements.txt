@@ -8,6 +8,6 @@ pip==19.0.2
 setuptools==40.8.0
 Werkzeug==0.14.1
 wheel==0.32.3
-python-dotenv==0.7.1
+python-dotenv==0.10.1
 requests==2.21.0
-requests-oauthlib==1.0.
+requests-oauthlib==1.0.0
