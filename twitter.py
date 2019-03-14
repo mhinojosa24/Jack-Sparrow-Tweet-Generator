@@ -1,7 +1,10 @@
 import os
 import dotenv
-from requests_oauthlib import OAuth1Session
 
+# dotenv = Dotenv(os.path.join(os.path.dirname(__file__), ".env")) # Of course, replace by your correct path
+# os.environ.update(dotenv)
+from requests_oauthlib import OAuth1Session
+print("dotenv should be shown here: ", dir(dotenv))
 dotenv.load_dotenv('.env')
 
 consumer_key = os.environ.get('TWITTER_CONSUMER_KEY')
@@ -20,22 +23,32 @@ session = OAuth1Session(consumer_key,
 url = 'https://api.twitter.com/1.1/statuses/update.json'
 
 def tweet(status):
-    status = 'If you are reading this on Twitter, the API request worked!'
+    # status = 'If you are reading this on Twitter, the API request worked!'
     resp = session.post(url, { 'status': status })
     # print("response ==> ", resp.text)
     return resp.text
 
 
 # import os
-# import dotenv
+# from dotenv import Dotenv
+#
+# dotenv = Dotenv(os.path.join(os.path.dirname(__file__), ".env")) # Of course, replace by your correct path
+# os.environ.update(dotenv)
+# # print("dotenv should be shown here: ", dir(dotenv))
 # from requests_oauthlib import OAuth1Session
 #
-# dotenv.load_dotenv('.env')
+# # dotenv.load_dotenv('.env')
 #
 # consumer_key = os.environ.get('TWITTER_CONSUMER_KEY')
 # consumer_secret = os.environ.get('TWITTER_CONSUMER_SECRET')
 # access_token = os.environ.get('TWITTER_ACCESS_TOKEN')
 # access_token_secret = os.environ.get('TWITTER_ACCESS_TOKEN_SECRET')
+#
+# print(consumer_key)
+# print(consumer_secret)
+# print(access_token)
+# print(access_token_secret)
+#
 #
 #
 # session = OAuth1Session(consumer_key,

@@ -4,7 +4,7 @@ from markov_chain import *
 from cleanup import cleanup
 from tokenized import tokenize
 import sys
-# import twitter
+import twitter
 
 
 app = Flask(__name__, template_folder='templates', static_folder='css')
@@ -22,7 +22,7 @@ def generator():
 @app.route('/tweet', methods=['POST'])
 def tweet():
     status = request.form['sentence']
-    # twitter.tweet(status)
+    twitter.tweet(status)
     return redirect('/')
 
 if __name__ == '__main__':
