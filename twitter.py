@@ -13,6 +13,7 @@ access_token = os.environ.get('TWITTER_ACCESS_TOKEN')
 access_token_secret = os.environ.get('TWITTER_ACCESS_TOKEN_SECRET')
 
 
+
 session = OAuth1Session(consumer_key,
                         client_secret=consumer_secret,
                         resource_owner_key=access_token,
