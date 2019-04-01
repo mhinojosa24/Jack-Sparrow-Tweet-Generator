@@ -1,4 +1,0 @@
-In 2015, various branches of the greater Node.js community began working under the vendor-neutral Node.js
-Foundation. The stated purpose of the organization "is to enable widespread adoption and help accelerate
-development of Node.js and other related modules through an open governance model that encourages participation,
-technical contribution, and a framework for long-term stewardship by an ecosystem invested in Node.js success.
