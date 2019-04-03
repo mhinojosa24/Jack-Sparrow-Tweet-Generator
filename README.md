@@ -1,6 +1,6 @@
 # Jack Sparrow Tweet Generator
 
-> This WebApp generates a cohesive sentence based on quotes of Jack Sparrow.
+> This WebApp generates a cohesive sentence based on quotes of Jack Sparrow using a Markov Chain.
 
 ![](images/jspic.jpg)
 
