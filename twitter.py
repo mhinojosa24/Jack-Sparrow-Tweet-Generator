@@ -1,11 +1,11 @@
 import os
-import dotenv
+# import dotenv
 
-dotenv = Dotenv(os.path.join(os.path.dirname(__file__), ".env")) # Of course, replace by your correct path
-os.environ.update(dotenv)
-from requests_oauthlib import OAuth1Session
+# dotenv = Dotenv(os.path.join(os.path.dirname(__file__), ".env")) # Of course, replace by your correct path
+# os.environ.update(dotenv)
+# from requests_oauthlib import OAuth1Session
 print("dotenv should be shown here: ", dir(dotenv))
-dotenv.load_dotenv('.env')
+# dotenv.load_dotenv('.env')
 
 consumer_key = os.environ.get('TWITTER_CONSUMER_KEY')
 consumer_secret = os.environ.get('TWITTER_CONSUMER_SECRET')
