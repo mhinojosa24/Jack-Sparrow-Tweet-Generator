@@ -1,8 +1,8 @@
 import os
 import dotenv
 
-# dotenv = Dotenv(os.path.join(os.path.dirname(__file__), ".env")) # Of course, replace by your correct path
-# os.environ.update(dotenv)
+dotenv = Dotenv(os.path.join(os.path.dirname(__file__), ".env")) # Of course, replace by your correct path
+os.environ.update(dotenv)
 from requests_oauthlib import OAuth1Session
 print("dotenv should be shown here: ", dir(dotenv))
 dotenv.load_dotenv('.env')
