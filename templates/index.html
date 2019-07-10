@@ -4,87 +4,30 @@
         <meta charset="utf-8">
         <title>Jack Sparrow Tweet Generator</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="{{ url_for('static', filename = '../css/style.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}">
     </head>
-    <!-- css changes were not being met, styling is done here. -->
-    <style>
 
-        .masthead {
-            height: 100vh;
-            min-height: 500px;
-            background-image: url(https://wallpapercave.com/wp/wp1830335.jpg);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding-top: 250px;
-        }
-
-        .container {
-            margin-right: 30%;
-        }
-
-        .seeTweet {
-            position: absolute;
-            margin-top: 35%;
-            padding-left: 11%;
-            top: 0; right: 0; bottom: 0; left: 0;
-        }
-
-        .card {
-            background-color: transparent;
-            color: #ffffff;
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            margin: auto;
-            margin-left: 10%;
-            height: 200px;
-            width: 50%;
-            min-width: 500px;
-            white-space: normal !important;
-        }
-
-        .card-body {
-            padding-right: 150px;
-            color: #ffffff;
-        }
-
-        .card-body, h2 {
-            align-text: left;
-        }
-
-        .title {
-            white-space: nowrap !important;
-        }
-
-        #max {
-            color: #ffffff;
-        }
-    </style>
     <body>
-        <div class="masthead">
-            <div class="container">
-                <div class="card border-0">
-                    <div class="card-body">
-                        <h2 class="title" style="font-family: 'Niconne', cursive;"> Captain Jack Sparrow would like to say something:</h2>
-                        <blockquote style="font-family: 'Niconne', cursive;"> {{ sentence }}</blockquote>
-                        <form action="/" method="get">
-                            <input type="hidden" name="sentence" value="{{ sentence }}">
-                            <button type="submit" onclick="reloadPage()" class="btn btn-outline-light">Speak!</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="seeTweet">
-                    <form action="/tweet" method="post">
-                        <input type="hidden" name="sentence" value="{{ sentence }}">
-                        <button type="submit">Tweet this</button>
-                    </form>
-                    <div>
-                        <a class="twitter-timeline" data-width="500" data-height="300" data-theme="dark" href="https://twitter.com/Captain05725774">Tweets by TwitterDev</a>
-                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="flex-container">
+          <div class="con1">
+            <h2 style="font-family: 'Niconne', cursive;"> Captain Jack Sparrow would like to say something:</h2>
+            <blockquote class="sentence" style="font-family: 'Niconne', cursive;"> {{ sentence }}</blockquote>
+            <form action="/" method="get">
+                <input type="hidden" name="sentence" value="{{ sentence }}">
+                <button type="submit" onclick="reloadPage()" class="btn btn-outline-light">Speak!</button>
+            </form>
+          </div>
+          <div class="con2">
+              <form action="/tweet" method="post">
+                  <input type="hidden" name="sentence" value="{{ sentence }}">
+                  <button type="submit" onclick="reloadPage()">Tweet this</button>
+              </form>
+              <div>
+                  <a class="twitter-timeline" data-width="500" data-height="300" data-theme="dark" href="https://twitter.com/Captain05725774">Tweets by TwitterDev</a>
+                  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </div>
+          </div>
+      </div>
     </body>
     <script>
         function reloadPage() {

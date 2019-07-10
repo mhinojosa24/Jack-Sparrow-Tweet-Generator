@@ -1,8 +1,8 @@
 # from nltk.corpus import words
-from class_methods.stochastic_sampling import *
-# from stochastic_sampling import *
-from class_methods.dictogram import Dictogram
-# from dictogram import Dictogram
+# from class_methods.stochastic_sampling import *
+from stochastic_sampling import *
+# from class_methods.dictogram import Dictogram
+from dictogram import Dictogram
 import random, re
 
 
